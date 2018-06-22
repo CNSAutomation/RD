@@ -2,7 +2,6 @@ package com.qa.rd.scripts.appModule;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 import com.qa.rd.pageobjects.Login_Page;

@@ -8,39 +8,66 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.qa.rd.scripts.appModule.CreateServiceRequest_Action;
 import com.qa.rd.scripts.appModule.HomeSearchLocation_Action;
 import com.qa.rd.scripts.appModule.Login_Action;
 import com.qa.rd.scripts.base.Base;
+import com.qa.rd.scripts.library.Functions;
 import com.qa.rd.scripts.utility.Log;
 import com.qa.rd.scripts.utility.TestListener;
 
-public class HomeSearchTest extends Base {
+public class CreateServiceRequestTest extends Base {
 	// Getting the Test Case name, as it will going to use in so many places
 	private String sTestCaseName = this.toString();
 
-	@Test
+	@Test(priority = 0)
 	public void Test_Search_Locaion() throws Exception {
 		Log.info("-------Start TestCase" + sTestCaseName + "----------");
 		driver.manage().deleteAllCookies();
-		logger = extent.createTest("Test HomePage Search_Location");
+		logger = extent.createTest("Test HomePage Search Service Location");
 		//ExcelUtils.setExcelFile(getTestDataPath() + Constant.File_TestData, "LoginTest");
-		
 		try {
 			Login_Action.Click_Login_Link();
 			logger.log(Status.PASS, MarkupHelper.createLabel("Click_Login_Link", ExtentColor.GREEN));
 			Log.info("Login_Action.Click_Login_Link() : PASS");
 		} catch (Exception e) {
 			Log.error("Login_Action.Test_Valid_Login() : FAIL");
+			//logger.log(Status.FAIL, MarkupHelper.createLabel("Test_Blank_login", ExtentColor.RED));
+			Log.error(e.getMessage());
 			throw (e);
 		}
 		try {
-			HomeSearchLocation_Action.Test_SearchBuyLocation("Buy","Vast","Vastrapur");
-			logger.log(Status.PASS, MarkupHelper.createLabel("Test_Search_By_Location", ExtentColor.GREEN));
-			Log.info("Login_Action.Test_SearchLocation() : PASS");
+			Functions.CustomLogin("selenim1@test.com", "Admin@123");
+			HomeSearchLocation_Action.Test_SearchBuyLocation("Buy","Vast", "Vastrapur");
+			logger.log(Status.PASS, MarkupHelper.createLabel("Test_Search_Service_Location", ExtentColor.GREEN));
+			Log.info("HomeSearchLocation_Action.Test_SearchServiceLocation() : PASS");
 		} catch (Exception e) {
-			Log.error("Login_Action.Test_SearchLocation() : FAIL");
+			Log.error("HomeSearchLocation_Action.Test_SearchServiceLocation() : FAIL");
+			//logger.log(Status.FAIL, MarkupHelper.createLabel("Test_Search_By_Location", ExtentColor.RED));
+			Log.error(e.getMessage());
 			throw (e);
 		}
+		try {
+			CreateServiceRequest_Action.Test_Create_Service_Request();
+			logger.log(Status.PASS, MarkupHelper.createLabel("Test_Create_Service_Request", ExtentColor.GREEN));
+			Log.info("CreateServiceRequest_Action.Test_Create_Service_Request() : PASS");
+		} catch (Exception e) {
+			Log.error("CreateServiceRequest_Action.Test_Create_Service_Request_Validation() : FAIL");
+			//logger.log(Status.FAIL, MarkupHelper.createLabel("Test_Create_Property_Request", ExtentColor.RED));
+			Log.error(e.getMessage());
+			throw (e);
+		}
+		try {
+			CreateServiceRequest_Action.Verify_Created_Service_Request();
+			logger.log(Status.PASS, MarkupHelper.createLabel("Verify_Created_Service_Request", ExtentColor.GREEN));
+			Log.info("CreateServiceRequest_Action.Verify_Created_Service_Request() : PASS");
+		} catch (Exception e) {
+			Log.error("CreateServiceRequest_Action.Test_Create_Service_Request_Validation() : FAIL");
+			//logger.log(Status.FAIL, MarkupHelper.createLabel("Test_Create_Property_Request", ExtentColor.RED));
+			Log.error(e.getMessage());
+			throw (e);
+		}
+		
 	}
 
 	@AfterMethod

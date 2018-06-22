@@ -16,7 +16,9 @@ public class Home_Page {
 	@FindBy(how = How.XPATH, using = "//div[@id='center_column']/div/ol/li")
 	public static WebElement error_msg;
 	@FindBy(how = How.XPATH, using = "//div[@id='buy']/div[1]/div/ul/li/input")   
-	public static WebElement SearchBuy_Property;
+	public static WebElement txtSearchBuy_Location;
+	@FindBy(how = How.XPATH, using = "//div[@id='find_services']/form/div[1]/div/ul/li/input")
+	public static WebElement txtSearchService_Location;
 	@FindBy(how = How.ID, using = "spnBuySelectedPropType")
 	public static WebElement ProeprtyType_DD;
 	@FindBy(how = How.XPATH, using = "//div[@id='res_prop_type']/div[1]/div[1]/div/label") 
@@ -28,7 +30,20 @@ public class Home_Page {
 	@FindBy(how = How.ID, using = "selBuyMaxBudget")
 	public static WebElement MaxBudget_dd;
 	@FindBy(how = How.XPATH, using = "//div[@id='buy']/div[4]/a")
-	public static WebElement Searchbtn;
+	public static WebElement Buy_Searchbtn;
 	@FindBy(how = How.XPATH, using = "//a[@id='ui-id-4']")
 	public static WebElement selectVastrapur;
+	@FindBy(how = How.ID, using = "spnServiceSelectedType")
+	public static WebElement ServiceType_DD;
+	@FindBy(how = How.XPATH, using = "//div[@id='srv_type_list']/div[1]/div[1]/div/label")
+	public static WebElement Agentschk;
+	@FindBy(how = How.XPATH, using = "//div[@id='srv_type_list']/div[1]/div[3]/div/label")
+	public static WebElement Architectschk;
+	@FindBy(how = How.XPATH, using = "//div[@id='srv_type_list']/div[2]/div[1]/div/label")
+	public static WebElement CivilContractorschk;
+	@FindBy(how = How.XPATH, using = "//li[@id='liFindServices']/a")
+	public static WebElement FindServicesTab; 
+			
+	@FindBy(how = How.XPATH, using = "//div[@id='find_services']/form/div[3]/a")
+	public static WebElement Service_Searchbtn;
 }

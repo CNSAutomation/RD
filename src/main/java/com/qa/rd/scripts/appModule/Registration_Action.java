@@ -1,18 +1,14 @@
 package com.qa.rd.scripts.appModule;
 
-import java.io.File;
 import java.io.FileReader;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import com.qa.rd.pageobjects.Login_Page;
+
 import com.qa.rd.pageobjects.Registration_Page;
 import com.qa.rd.scripts.base.Base;
 import com.qa.rd.scripts.library.Functions;
@@ -22,7 +18,6 @@ import com.qa.rd.scripts.utility.Log;
 // For Modular Driven Frameworkg, please see http://www.toolsqa.com/modular-driven/   
 public class Registration_Action extends Base {
 	// iTestcaseRow is the row number of our Testcase name in the Test Data sheet
-	private static int iTestCaseRow;
 	static JSONParser parser = new JSONParser();
 
 	public Registration_Action(WebDriver driver) {

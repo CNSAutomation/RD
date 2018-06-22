@@ -12,6 +12,11 @@
 			<class name="com.qa.rd.scripts.RegistrationTest" />
 		</classes>
 	</test>
+	<test name="CreateServiceRequest">
+		<classes>
+			<class name="com.qa.rd.scripts.CreateServiceRequestTest" />
+		</classes>
+	</test>
 	<test name="CreatePropertyRequest">
 		<classes>
 			<class name="com.qa.rd.scripts.CreatePropertyRequestTest" />

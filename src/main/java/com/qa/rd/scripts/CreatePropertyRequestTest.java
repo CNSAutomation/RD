@@ -12,6 +12,7 @@ import com.qa.rd.scripts.appModule.CreatePropertyRequest_Action;
 import com.qa.rd.scripts.appModule.HomeSearchLocation_Action;
 import com.qa.rd.scripts.appModule.Login_Action;
 import com.qa.rd.scripts.base.Base;
+import com.qa.rd.scripts.library.Functions;
 import com.qa.rd.scripts.utility.Log;
 import com.qa.rd.scripts.utility.TestListener;
 
@@ -36,7 +37,8 @@ public class CreatePropertyRequestTest extends Base {
 			throw (e);
 		}
 		try {
-			HomeSearchLocation_Action.Test_SearchLocation();
+			Functions.CustomLogin("selenim1@test.com", "Admin@123");
+			HomeSearchLocation_Action.Test_SearchBuyLocation("Buy","Vast","Vastrapur");
 			logger.log(Status.PASS, MarkupHelper.createLabel("Test_Search_By_Location", ExtentColor.GREEN));
 			Log.info("Login_Action.Test_SearchLocation() : PASS");
 		} catch (Exception e) {

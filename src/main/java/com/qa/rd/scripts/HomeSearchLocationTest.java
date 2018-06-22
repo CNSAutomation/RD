@@ -1,7 +1,6 @@
 package com.qa.rd.scripts;
 
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
@@ -37,7 +36,7 @@ public class HomeSearchLocationTest extends Base {
 			throw (e);
 		}
 		try {
-			HomeSearchLocation_Action.Test_SearchLocation();
+			HomeSearchLocation_Action.Test_SearchBuyLocation("Buy","Vast","Vastrapur");
 			logger.log(Status.PASS, MarkupHelper.createLabel("Test_Search_By_Location", ExtentColor.GREEN));
 			Log.info("HomeSearchLocationTest.Test_Search_Locaion() : PASS");
 		} catch (Exception e) {

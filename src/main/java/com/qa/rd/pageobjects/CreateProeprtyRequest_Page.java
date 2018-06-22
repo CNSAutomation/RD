@@ -31,4 +31,5 @@ public class CreateProeprtyRequest_Page {
 	public static WebElement GymnasiumChk;
 	@FindBy(how = How.XPATH, using ="//div[@id='creReqDiv']/div[3]/div/button[2]")
 	public static WebElement CreateRequestbtn;
+	
 }
