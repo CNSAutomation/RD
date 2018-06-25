@@ -23,4 +23,5 @@ public class Constant {
 	public static final String Path_ScreenShot = "\\Screenshots";
 	public static final String Path_Report = "\\TestReport_";
 	public static final String FF_Driver =  "/drivers/geckodriver-v0.19.1-win64/geckodriver.exe";
+	public static final String FileUploadScript = "\\src\\main\\resources\\AutoIT\\FileUpload.exe";
 }

@@ -1,31 +1,30 @@
 package com.qa.rd.scripts;
 
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.qa.rd.scripts.appModule.ForgotPwd_Action;
 import com.qa.rd.scripts.appModule.Login_Action;
-import com.qa.rd.scripts.appModule.PostResProperty_Action;
 import com.qa.rd.scripts.base.Base;
-import com.qa.rd.scripts.library.Functions;
 import com.qa.rd.scripts.utility.Constant;
 import com.qa.rd.scripts.utility.ExcelUtils;
 import com.qa.rd.scripts.utility.Log;
 import com.qa.rd.scripts.utility.TestListener;
 
-public class ResPropertyPostTest extends Base {
+public class ForgotPwdTest extends Base {
 	// Getting the Test Case name, as it will going to use in so many places
 	private String sTestCaseName = this.toString();
 
-	@Test
-	public void Test_Res_Property_Post_Validation() throws Exception {
+	@Test(priority = 0)
+	public void Test_Forgot_Validation() throws Exception {
 		Log.info("-------Start TestCase" + sTestCaseName + "----------");
 		driver.manage().deleteAllCookies();
-		logger = extent.createTest("Test Post Property");
+		logger = extent.createTest("Test Forgot Password Validation");
 		try {
 			Login_Action.Click_Login_Link();
 			logger.log(Status.PASS, MarkupHelper.createLabel("Click_Login_Link", ExtentColor.GREEN));
@@ -37,16 +36,14 @@ public class ResPropertyPostTest extends Base {
 			throw (e);
 		}
 		try {
-			Functions.CustomLogin("selenim@test.com", "Admin@123");
-			PostResProperty_Action.Test_Res_Property_Validation();
-			logger.log(Status.PASS, MarkupHelper.createLabel("Test_Res_Property_Validation", ExtentColor.GREEN));
-			Log.info("PostResProperty_Action.Test_Res_Property_Validation() : PASS");
+			ForgotPwd_Action.Test_FogotPwd_Validation();
+			logger.log(Status.PASS, MarkupHelper.createLabel("Test_FogotPwd_Validation", ExtentColor.GREEN));
+			Log.info("ForgotPwd_Action.Test_FogotPwd_Validation() : PASS");
 		} catch (Exception e) {
-			Log.error("PostResProperty_Action.Test_Res_Property_Validation() : FAIL");
+			Log.error("ForgotPwd_Action.Test_FogotPwd_Validation() : FAIL");
 			throw (e);
 		}
 	}
-
 	@AfterMethod
 	public void getResult(ITestResult result) throws Exception {
 		Log.endTestCase(sTestCaseName);
@@ -65,7 +62,7 @@ public class ResPropertyPostTest extends Base {
 		}
 	}
 
-	@AfterTest
+	@AfterClass
 	public void endReport() {
 		driver.close();
 	}

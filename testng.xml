@@ -12,6 +12,11 @@
 			<class name="com.qa.rd.scripts.RegistrationTest" />
 		</classes>
 	</test>
+	<test name="ForgotPwd">
+		<classes>
+			<class name="com.qa.rd.scripts.ForgotPwdTest" />
+		</classes>
+	</test>
 	<test name="CreateServiceRequest">
 		<classes>
 			<class name="com.qa.rd.scripts.CreateServiceRequestTest" />

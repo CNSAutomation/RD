@@ -37,7 +37,7 @@ public class CreatePropertyRequestTest extends Base {
 			throw (e);
 		}
 		try {
-			Functions.CustomLogin("selenim1@test.com", "Admin@123");
+			Functions.CustomLogin("selenim@test.com", "Admin@123");
 			HomeSearchLocation_Action.Test_SearchBuyLocation("Buy","Vast","Vastrapur");
 			logger.log(Status.PASS, MarkupHelper.createLabel("Test_Search_By_Location", ExtentColor.GREEN));
 			Log.info("Login_Action.Test_SearchLocation() : PASS");
