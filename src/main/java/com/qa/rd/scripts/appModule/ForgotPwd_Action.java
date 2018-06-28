@@ -16,9 +16,6 @@ import com.qa.rd.scripts.utility.Log;
 // For Modular Driven Frameworkg, please see http://www.toolsqa.com/modular-driven/   
 public class ForgotPwd_Action extends Base {
 	// iTestcaseRow is the row number of our Testcase name in the Test Data sheet
-	private static int iTestCaseRow;
-	private static String winHandleBefore;
-
 	public ForgotPwd_Action(WebDriver driver) {
 		Base.driver = driver;
 	}

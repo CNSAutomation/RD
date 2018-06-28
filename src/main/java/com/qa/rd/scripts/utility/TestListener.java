@@ -9,8 +9,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
-
-import com.aventstack.extentreports.Status;
 import com.qa.rd.scripts.base.Base;
 
 public class TestListener extends TestListenerAdapter {

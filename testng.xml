@@ -28,4 +28,9 @@
 			<class name="com.qa.rd.scripts.SearchPropertyRequestTest" />
 		</classes>
 	</test>
+	<test name="PostResidentialProperty">
+		<classes>
+			<class name="com.qa.rd.scripts.ResPropertyPostTest" />
+		</classes>
+	</test>
 </suite>

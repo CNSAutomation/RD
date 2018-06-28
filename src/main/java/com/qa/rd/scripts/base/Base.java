@@ -9,6 +9,7 @@ import java.util.Date;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -71,13 +72,17 @@ public class Base {
 		//System.setProperty("webdriver.gecko.driver", getClass().getResource(Constant.FF_Driver).getPath());
 		//driver = new FirefoxDriver();
 
-		System.out.println(getClass().getResource(Constant.FF_Driver));
-		URI url = new URI(getClass().getResource(Constant.FF_Driver).getFile());
+		System.out.println(getClass().getResource(Constant.Chrom_Driver));
+		URI url = new URI(getClass().getResource(Constant.Chrom_Driver).getFile());
+//		System.out.println(getClass().getResource(Constant.FF_Driver));
+//		URI url = new URI(getClass().getResource(Constant.FF_Driver).getFile());
 		File f1=new File(url.getPath());
 		Assert.assertEquals(f1.exists(), true);
-		System.setProperty("webdriver.gecko.driver", url.getPath());
-		driver = new FirefoxDriver();
+//		System.setProperty("webdriver.gecko.driver", url.getPath());
+//		driver = new FirefoxDriver();
 		
+		System.setProperty("webdriver.chrome.driver", url.getPath());
+		driver = new ChromeDriver();
 		driver.navigate().to(Constant.URL);
 		//logger.info("Open URL :" +Constant.URL);
 		driver.manage().window().maximize();

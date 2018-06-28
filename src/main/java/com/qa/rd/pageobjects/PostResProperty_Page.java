@@ -83,5 +83,17 @@ public class PostResProperty_Page {
 	@FindBy(how = How.XPATH, using = "//div[@id='divResMainImageUploader']/div/div/div[1]")
 	public static WebElement UploadMainImage;
 	
+	@FindBy(how = How.XPATH, using = "//div[@id='divBuildingEntranceImageUploader_1']/div/div/div[1]")
+	public static WebElement BuildingEnterenceImage;
+	
+	@FindBy(how = How.XPATH, using = "//div[@id='prop_photos']/div/a[1]/span")
+	public static WebElement GoToStep6;
+	
+	@FindBy(how = How.XPATH, using = "//div[@id='divTermsNdConditions']/div/div/div/input")
+	public static WebElement AgreeTerm;
+	
+	@FindBy(how = How.ID, using = "btnPostProperty")
+	public static WebElement PostPropertybtn;
+	
 	
 }

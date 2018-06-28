@@ -12,8 +12,6 @@ import com.qa.rd.scripts.appModule.Login_Action;
 import com.qa.rd.scripts.appModule.PostResProperty_Action;
 import com.qa.rd.scripts.base.Base;
 import com.qa.rd.scripts.library.Functions;
-import com.qa.rd.scripts.utility.Constant;
-import com.qa.rd.scripts.utility.ExcelUtils;
 import com.qa.rd.scripts.utility.Log;
 import com.qa.rd.scripts.utility.TestListener;
 

@@ -5,7 +5,7 @@ import org.openqa.selenium.support.How;
 
 public class Login_Page {
 
-	@FindBy(how = How.XPATH, using = "//a[@href = 'javascript:void(0)' and (text() = 'Login' or . = 'Login')]")
+	@FindBy(how = How.XPATH, using = "//header[@id='header']/div[2]/div[2]/a[1]")
 	public static WebElement LoginLink;
 	@FindBy(how = How.ID, using = "UserLoginDetail_EmailOrPhone")
 	public static WebElement Login_EmailorPhone;

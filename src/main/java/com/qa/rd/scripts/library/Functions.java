@@ -4,21 +4,16 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.qa.rd.pageobjects.Home_Page;
 import com.qa.rd.pageobjects.Login_Page;
 import com.qa.rd.scripts.base.Base;
-import com.qa.rd.scripts.utility.Constant;
-import com.qa.rd.scripts.utility.ExcelUtils;
 import com.qa.rd.scripts.utility.Log;
 
 public class Functions extends Base {
@@ -182,7 +177,7 @@ public class Functions extends Base {
 
 	public static void CustomLogin(String LoginUser, String Password) throws Exception {
 
-		// PageFactory.initElements(driver, Login_Page.class);
+		PageFactory.initElements(driver, Login_Page.class);
 		// Enter invalid email format
 		Functions.Enter(Login_Page.Login_EmailorPhone, LoginUser);
 		
@@ -191,7 +186,7 @@ public class Functions extends Base {
 		
 		// Click on Sign In button
 		Functions.Click(Login_Page.Login_btn);
-
+		Thread.sleep(1000);
 		Login_Page.MenuIcon.click();
 		Thread.sleep(1000);
 

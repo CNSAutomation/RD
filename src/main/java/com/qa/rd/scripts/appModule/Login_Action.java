@@ -104,7 +104,7 @@ public class Login_Action extends Base {
 		Functions.Enter(Login_Page.LoginPassword, sPwd);
 		// Click on Sign In button
 		Functions.Click(Login_Page.Login_btn);
-
+		Thread.sleep(1000);
 		Login_Page.MenuIcon.click();
 		Thread.sleep(1000);
 

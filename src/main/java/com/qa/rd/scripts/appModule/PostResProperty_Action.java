@@ -1,17 +1,11 @@
 package com.qa.rd.scripts.appModule;
-
-import java.io.File;
-import java.net.URI;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
-
 import com.qa.rd.pageobjects.Login_Page;
 import com.qa.rd.pageobjects.PostResProperty_Page;
 import com.qa.rd.scripts.base.Base;
@@ -90,10 +84,24 @@ public class PostResProperty_Action extends Base {
         Functions.Click(PostResProperty_Page.GoToStep5);
         Functions.Click(PostResProperty_Page.UploadMainImage);
         Thread.sleep(2000);
-       System.out.println("AutoIT script path :"+System.getProperty("user.dir")+Constant.FileUploadScript);
+        System.out.println("AutoIT script path :"+System.getProperty("user.dir")+Constant.MainImageUploadScript);
 		
-		Runtime.getRuntime().exec(System.getProperty("user.dir")+Constant.FileUploadScript);
-      
+		Runtime.getRuntime().exec(System.getProperty("user.dir")+Constant.MainImageUploadScript);
+     
         Thread.sleep(2000);
-	}
+        
+        Functions.Click(PostResProperty_Page.BuildingEnterenceImage);
+        System.out.println("AutoIT script path :"+System.getProperty("user.dir")+Constant.BuildingEnterenceImageLoadScript);
+        Runtime.getRuntime().exec(System.getProperty("user.dir")+Constant.BuildingEnterenceImageLoadScript);
+        
+        Thread.sleep(2000);
+        
+        Functions.Click(PostResProperty_Page.GoToStep6);
+        Functions.Click(PostResProperty_Page.AgreeTerm);
+        
+        
+        Functions.Click(PostResProperty_Page.PostPropertybtn);
+        
+        Thread.sleep(2000);
+       }
 }
